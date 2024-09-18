@@ -1,0 +1,9 @@
+body {
+  background: #4bc0c033;
+}
+
+.chart-wrapp {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
