@@ -72,4 +72,4 @@ const config = {
   },
 };
 
-const myChart = new Chart(document.getElementById("chart-2"), config);
+const cart2 = new Chart(document.getElementById("chart-2"), config);
