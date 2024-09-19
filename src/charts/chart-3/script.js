@@ -64,6 +64,9 @@ const config = {
         title: {
           display: true,
           text: "Total Sales Agents",
+          font: {
+            size: 20,
+          },
         },
       },
     },
