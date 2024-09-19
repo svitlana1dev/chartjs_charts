@@ -44,9 +44,18 @@ const config = {
         min: 0,
         max: 100,
         ticks: {
-          stepSize: 30,
+          stepSize: 20,
           font: {
             size: 20,
+          },
+        },
+        grid: {
+          color: (context) => {
+            if (context.index === 2) {
+              return "rgba(75, 192, 192, 1)";
+            } else {
+              return "rgba(0, 0, 0, 0.1)";
+            }
           },
         },
       },

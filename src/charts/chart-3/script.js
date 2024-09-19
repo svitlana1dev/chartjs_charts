@@ -53,6 +53,15 @@ const config = {
             size: 16,
           },
         },
+        grid: {
+          color: (context) => {
+            if (context.index === 2) {
+              return "rgba(75, 192, 192, 1)";
+            } else {
+              return "rgba(0, 0, 0, 0.1)";
+            }
+          },
+        },
       },
       y: {
         beginAtZero: true,
@@ -66,6 +75,16 @@ const config = {
           text: "Total Sales Agents",
           font: {
             size: 20,
+          },
+        },
+        grid: {
+          color: (context) => {
+            console.log(context.index);
+            if (context.index === 3) {
+              return "rgba(75, 192, 192, 1)";
+            } else {
+              return "rgba(0, 0, 0, 0.1)";
+            }
           },
         },
       },
