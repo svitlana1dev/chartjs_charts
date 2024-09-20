@@ -34,9 +34,13 @@ const config = {
     scales: {
       x: {
         ticks: {
+          color: "#fff",
           font: {
             size: 16,
           },
+        },
+        grid: {
+          color: "#303030",
         },
       },
       y: {
@@ -45,8 +49,9 @@ const config = {
         max: 100,
         ticks: {
           stepSize: 20,
+          color: "#fff",
           font: {
-            size: 20,
+            size: 16,
           },
         },
         grid: {
@@ -54,7 +59,7 @@ const config = {
             if (context.index === 2) {
               return "rgba(75, 192, 192, 1)";
             } else {
-              return "rgba(0, 0, 0, 0.1)";
+              return "#303030";
             }
           },
         },
@@ -63,18 +68,19 @@ const config = {
     plugins: {
       legend: {
         labels: {
+          color: "#fff",
           font: {
-            size: 20,
+            size: 16,
           },
         },
       },
       tooltip: {
         padding: 20,
         bodyFont: {
-          size: 20,
+          size: 12,
         },
         titleFont: {
-          size: 24,
+          size: 14,
         },
       },
     },

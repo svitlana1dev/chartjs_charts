@@ -26,8 +26,11 @@
 
 .chart-box {
   width: 70vw;
-  padding: 45px;
+  padding: 20px;
   border-radius: 20px;
-  border: solid 3px #4bc0c0;
-  background: #fff;
 }
+
+.chart-height {
+  height: 80vh;
+}
+

@@ -6,8 +6,9 @@
 }
 
 .btn {
-  border: 1px solid #637bff;
-  background: #e0e8ff;
+  border: none;
+  background: #01c700;
+  color: #fff;
   padding: 5px 10px;
   border-radius: 3px;
   text-transform: uppercase;

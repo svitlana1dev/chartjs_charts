@@ -43,12 +43,13 @@ const config = {
         title: {
           display: true,
           text: "Total Sales",
-          color: color,
+          color: "#fff",
           font: {
-            size: 20,
+            size: 16,
           },
         },
         ticks: {
+          color: "#fff",
           font: {
             size: 16,
           },
@@ -58,7 +59,7 @@ const config = {
             if (context.index === 2) {
               return "rgba(75, 192, 192, 1)";
             } else {
-              return "rgba(0, 0, 0, 0.1)";
+              return "#303030";
             }
           },
         },
@@ -66,24 +67,25 @@ const config = {
       y: {
         beginAtZero: true,
         ticks: {
+          color: "#fff",
           font: {
-            size: 20,
+            size: 16,
           },
         },
         title: {
           display: true,
           text: "Total Sales Agents",
+          color: "#fff",
           font: {
-            size: 20,
+            size: 16,
           },
         },
         grid: {
           color: (context) => {
-            console.log(context.index);
             if (context.index === 3) {
               return "rgba(75, 192, 192, 1)";
             } else {
-              return "rgba(0, 0, 0, 0.1)";
+              return "#303030";
             }
           },
         },
@@ -92,18 +94,19 @@ const config = {
     plugins: {
       legend: {
         labels: {
+          color: "#fff",
           font: {
-            size: 20,
+            size: 14,
           },
         },
       },
       tooltip: {
         padding: 20,
         bodyFont: {
-          size: 20,
+          size: 12,
         },
         titleFont: {
-          size: 24,
+          size: 14,
         },
       },
     },

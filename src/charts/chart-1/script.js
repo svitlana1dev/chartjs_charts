@@ -45,7 +45,11 @@ const config = {
     indexAxis: "y",
     scales: {
       x: {
+        grid: {
+          color: "#303030",
+        },
         ticks: {
+          color: "#fff",
           font: {
             size: 16,
           },
@@ -53,9 +57,13 @@ const config = {
       },
       y: {
         beginAtZero: true,
+        grid: {
+          color: "#303030",
+        },
         ticks: {
+          color: "#fff",
           font: {
-            size: 20,
+            size: 16,
           },
         },
       },
@@ -63,14 +71,16 @@ const config = {
     plugins: {
       legend: {
         labels: {
+          color: "#fff",
           font: {
-            size: 20,
+            size: 14,
           },
         },
       },
       title: {
         display: true,
         text: "Departments",
+        color: "#fff",
         font: {
           size: 20,
         },
@@ -78,10 +88,10 @@ const config = {
       tooltip: {
         padding: 20,
         bodyFont: {
-          size: 20,
+          size: 12,
         },
         titleFont: {
-          size: 24,
+          size: 14,
         },
       },
     },

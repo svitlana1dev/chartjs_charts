@@ -39,35 +39,44 @@ const config = {
     scales: {
       x: {
         ticks: {
+          color: "#fff",
           font: {
             size: 16,
           },
+        },
+        grid: {
+          color: "#303030",
         },
       },
       y: {
         beginAtZero: true,
         ticks: {
+          color: "#fff",
           font: {
-            size: 20,
+            size: 16,
           },
+        },
+        grid: {
+          color: "#303030",
         },
       },
     },
     plugins: {
       legend: {
         labels: {
+          color: "#fff",
           font: {
-            size: 20,
+            size: 16,
           },
         },
       },
       tooltip: {
         padding: 20,
         bodyFont: {
-          size: 20,
+          size: 12,
         },
         titleFont: {
-          size: 24,
+          size: 14,
         },
       },
     },
