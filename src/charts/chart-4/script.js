@@ -1,5 +1,15 @@
 import Chart from "chart.js/auto";
 
+const color = ["red", "blue", "yellow", "green", "purple", "orange"];
+const bg = [
+  "rgba(255, 99, 132, 0.6)",
+  "rgba(54, 162, 235, 0.6)",
+  "rgba(255, 206, 86, 0.6)",
+  "rgba(75, 192, 192, 0.6)",
+  "rgba(153, 102, 255, 0.6)",
+  "rgba(255, 159, 64, 0.6)",
+];
+
 const data = {
   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
   datasets: [
@@ -13,8 +23,8 @@ const data = {
         [3, 12],
         [9, 2],
       ],
-      backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-      borderColor: ["rgba(255, 99, 132, 1)"],
+      backgroundColor: bg,
+      borderColor: color,
       borderWidth: 1,
       borderSkipped: false,
     },
