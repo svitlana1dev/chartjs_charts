@@ -7,7 +7,7 @@
 
 .btn {
   border: none;
-  background: #01c700;
+  background: rgba(75, 192, 192, 0.6);
   color: #fff;
   padding: 5px 10px;
   border-radius: 3px;
