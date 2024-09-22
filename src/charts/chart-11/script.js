@@ -1,5 +1,4 @@
 import Chart from "chart.js/auto";
-import { color } from "chart.js/helpers";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
 const data = {
@@ -16,8 +15,6 @@ const data = {
   datasets: [
     {
       label: "# of Votes",
-      //data: [12, 19, 3, 5, 2, 3],
-
       data: [
         [12, 19],
         [19, 3],
@@ -46,7 +43,7 @@ const waterfallLines = {
     } = chart;
 
     ctx.save();
-    ctx.strokeStyle = options.lineColor;
+    ctx.strokeStyle = "#fff";
     ctx.setLineDash([options.linestyle1, options.linestyle2]);
     for (let i = 0; i < config._config.data.datasets[0].data.length - 1; i++) {
       ctx.strokeRect(
@@ -111,7 +108,6 @@ const config = {
       },
       datalabels: {
         formatter: (value) => {
-          console.log(value);
           const votes = value[1] - value[0];
           const netVotes = Math.abs(votes);
           return `Votes: ${netVotes}`;
@@ -137,7 +133,7 @@ const config = {
       },
     },
   },
-  plugins: [legendMargin, ChartDataLabels],
+  plugins: [legendMargin, ChartDataLabels, waterfallLines],
 };
 
 const chart11 = new Chart(document.getElementById("chart-11"), config);
@@ -151,7 +147,7 @@ function barColorCode() {
         ? "rgba(75, 192, 192, 1)"
         : start > end
         ? "rgba(255, 99, 132, 1)"
-        : "black";
+        : "#fff";
 
     if (
       ctx.dataIndex === 0 ||
