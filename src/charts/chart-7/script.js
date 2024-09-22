@@ -1,24 +1,36 @@
 import Chart from "chart.js/auto";
 
+const down = (ctx, value) =>
+  ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
+
 const data = {
   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
   datasets: [
     {
-      label: "Red Bar",
-      data: [6, 19, 13, 15, 12, 13],
-      backgroundColor: ["rgba(255, 99, 132, 0.6)"],
-      borderColor: ["rgba(255, 99, 132, 1)"],
-      borderWidth: 1,
-      categoryPercentage: 0.5,
-      order: 0,
-    },
-    {
-      label: "Orange Bar",
-      data: [5, 15, 3, 5, 2, 3],
-      backgroundColor: ["rgba(255, 159, 64, 1)"],
-      borderColor: ["rgba(255, 159, 64, 1)"],
-      borderWidth: 1,
-      order: 1,
+      label: "# of Votes",
+      data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        "rgba(255, 99, 132, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 206, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(153, 102, 255, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+      ],
+      // borderColor: [
+      //   'rgba(255, 99, 132, 1)',
+      //   'rgba(54, 162, 235, 1)',
+      //   'rgba(255, 206, 86, 1)',
+      //   'rgba(75, 192, 192, 1)',
+      //   'rgba(153, 102, 255, 1)',
+      //   'rgba(255, 159, 64, 1)'
+      // ],
+      tension: 0.4,
+      segment: {
+        borderColor: (ctx) =>
+          down(ctx, "rgba(255, 99, 132, 1)") || "rgba(75, 192, 192, 1)",
+        borderDash: (ctx) => down(ctx, [2, 10]),
+      },
     },
   ],
 };
@@ -38,12 +50,12 @@ const legendMargin = {
 };
 
 const config = {
-  type: "bar",
+  type: "line",
   data: data,
   options: {
     scales: {
       x: {
-        stacked: true,
+        //   // stacked: true,
         grid: {
           color: "#303030",
         },
@@ -84,4 +96,5 @@ const config = {
   plugins: [legendMargin],
 };
 
-const chart6 = new Chart(document.getElementById("chart-6"), config);
+const chart7 = new Chart(document.getElementById("chart-7"), config);
+console.log("hello");
