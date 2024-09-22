@@ -37,6 +37,21 @@ const firstLetterUpperCase = (word) => {
   return word.charAt(0).toUpperCase() + word.slice(1);
 };
 
+const chartAreaBorder = {
+  id: "chartAreaBorder",
+  beforeDraw(chart, args, options) {
+    const {
+      ctx,
+      chartArea: { top, bottom, left, right, width, height },
+    } = chart;
+    ctx.strokeStyle = "#fff";
+    ctx.strokeRect(right - 1, top, 0, height);
+
+    ctx.strokeStyle = "#fff";
+    ctx.strokeRect(left, bottom, width - 1, 1);
+  },
+};
+
 const config = {
   type: "bar",
   data: data,
@@ -107,6 +122,7 @@ const config = {
       },
     },
   },
+  plugins: [chartAreaBorder],
 };
 
 const chart1 = new Chart(document.getElementById("chart-1"), config);
