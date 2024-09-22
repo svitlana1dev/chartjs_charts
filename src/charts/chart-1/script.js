@@ -33,6 +33,10 @@ const data = {
   ],
 };
 
+const firstLetterUpperCase = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
+
 const config = {
   type: "bar",
   data: data,
@@ -86,6 +90,13 @@ const config = {
         },
       },
       tooltip: {
+        callbacks: {
+          label: (context) => {
+            return `$${
+              context.raw.financials[context.dataset.label.toLowerCase()]
+            } ${firstLetterUpperCase(context.dataset.label)} Percentage: %`;
+          },
+        },
         padding: 20,
         bodyFont: {
           size: 12,
