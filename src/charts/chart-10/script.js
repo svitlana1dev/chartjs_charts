@@ -55,7 +55,7 @@ const hoverLabels = {
     ctx.font = "bolder 60px Arial";
     ctx.fillStyle = color;
     ctx.textAlign = "center";
-    ctx.fillText(`${textLabel}: $${dataLabel}`, width / 2, height / 2 + 25);
+    ctx.fillText(`${textLabel}: $${dataLabel}`, width / 2, height / 2 + 60);
     ctx.restore();
   },
 };
