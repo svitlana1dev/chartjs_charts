@@ -53,7 +53,6 @@ const barGrowthIndicator = {
       deltaPercentage.push(percentage.toFixed(1));
     }
 
-    console.log(chart._metasets[1].hidden);
     if (chart._metasets[1].hidden !== true) {
       for (let a = 0; a < deltaPercentage.length; a++) {
         const start = chart._metasets[1]._parsed[a]._custom.start;
