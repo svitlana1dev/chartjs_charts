@@ -28,23 +28,34 @@ const data = {
   ],
 };
 
-const doughnutLabel = {
-  id: "doughnutLabel",
-  beforeDraw(chart, args, options) {
+const hoverLabels = {
+  id: "hoverLabels",
+
+  afterDatasetsDraw(chart, args, options) {
     const {
       ctx,
       chartArea: { top, bottom, left, right, width, height },
     } = chart;
     ctx.save();
-    ctx.font = `${options.fontSize}px Arial`;
+    let textLabel = chart.legend.legendItems[0].text || "";
+    let dataLabel = chart.data.datasets[0].data[0] || "";
+    let color = "#fff";
+
+    if (chart._active[0]) {
+      textLabel = chart.config.data.labels[chart._active[0].index];
+      dataLabel =
+        chart.config.data.datasets[chart._active[0].datasetIndex].data[
+          chart._active[0].index
+        ];
+      color =
+        chart.config.data.datasets[chart._active[0].datasetIndex].borderColor[
+          chart._active[0].index
+        ];
+    }
+    ctx.font = "bolder 60px Arial";
+    ctx.fillStyle = color;
     ctx.textAlign = "center";
-    ctx.fillStyle = options.fontColor;
-    ctx.textBaseline = "middle";
-    ctx.fillText(
-      `${chart.data.datasets[0].data[0]}%`,
-      width / 2,
-      height / 2 + top + options.fontSize / 20
-    );
+    ctx.fillText(`${textLabel}: $${dataLabel}`, width / 2, height / 2 + 25);
     ctx.restore();
   },
 };
@@ -85,10 +96,6 @@ const config = {
       legend: {
         display: false,
       },
-      doughnutLabel: {
-        fontSize: 100,
-        fontColor: "#fff",
-      },
       tooltip: {
         padding: 20,
         bodyFont: {
@@ -100,7 +107,7 @@ const config = {
       },
     },
   },
-  plugins: [doughnutLabel, legendMargin],
+  plugins: [hoverLabels, legendMargin],
 };
 
 const chart10 = new Chart(document.getElementById("chart-10"), config);
