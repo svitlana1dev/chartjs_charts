@@ -1,4 +1,5 @@
 import Chart from "chart.js/auto";
+import { color } from "chart.js/helpers";
 
 const data = {
   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -115,12 +116,28 @@ const config = {
         grid: {
           color: "#303030",
         },
+        ticks: {
+          color: "#fff",
+        },
       },
       y: {
         beginAtZero: true,
         max: 9,
         grid: {
           color: "#303030",
+        },
+        ticks: {
+          color: "#fff",
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          color: "#fff",
+          font: {
+            size: 14,
+          },
         },
       },
     },
