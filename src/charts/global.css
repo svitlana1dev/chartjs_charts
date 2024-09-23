@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.chart-menu {
+  width: 100vw;
+  height: 40px;
+  background: #1a1a1a;
+  color: rgba(75, 192, 192, 1);
+}
+
+.chart-menu p {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.chart-card {
+  width: 100vw;
+  height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-box {
+  width: 70vw;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.chart-height {
+  height: 80vh;
+}
+
+.box-center {
+  display: flex;
+  justify-content: center;
+}
+
